@@ -27,7 +27,7 @@ const calularPromedio = (nota1, nota2, nota3) =>{
 }
 
 const validarNota = (nota) =>{
-    if( (nota >= 1) && (nota <= 10) && !isNaN (nota) ){
+    if( (nota >= 1) && (nota <= 10) ){
         return true;
     }
     else{
@@ -36,7 +36,7 @@ const validarNota = (nota) =>{
 }
 
 const validarNombre = (nombre) =>{
-    if( (nombre == '') || (nombre.length >3) || isNaN(nombre) ){
+    if( (nombre == '') || (nombre.length <3) ){
         return false;
     }
     else{
@@ -44,6 +44,11 @@ const validarNombre = (nombre) =>{
     }
 }
 
+//seguir el lunes \/
+
+/* const validarTotalAlumnos = (listaEstudiantes) =>{
+    if( (listaEstudiantes ))
+} */
 
 
 /* inicio de programa */
@@ -71,7 +76,7 @@ for ( let i=1; i<= listaEstudiantes; i++){
     while( ! validarNota(nota1) )
 
     do {
-        nota1 = prompt ( 'Ingrese la nota del parcial 1');
+        nota2 = prompt ( 'Ingrese la nota del parcial 2');
         if ( ! validarNota (nota2)){
             alert ('La nota ingresada no es válida');
         }
@@ -79,7 +84,7 @@ for ( let i=1; i<= listaEstudiantes; i++){
     while( ! validarNota(nota2) )
 
     do {
-        nota1 = prompt ( 'Ingrese la nota del parcial 1');
+        nota3 = prompt ( 'Ingrese la nota del parcial 3');
         if ( ! validarNota (nota3)){
             alert ('La nota ingresada no es válida');
         }
@@ -89,7 +94,7 @@ for ( let i=1; i<= listaEstudiantes; i++){
     promedio = calularPromedio(nota1, nota2, nota3);
     evaluacion = sistemaEvaluacion(promedio)
 
-    let mensaje = estudiante + ' obtuvo las siguientes notas: ' + ' - ' + nota1 + ' - ' + nota2 + ' - ' + nota3 + '\n Logrando un promedio de: ' + promedio.toFixed(2)  
+    let mensaje = estudiante + ' obtuvo las siguientes notas: ' + '\n' + '- ' + nota1 + ' - ' + nota2 + ' - ' + nota3 + ' - ' + '\n Logrando un promedio de: ' + promedio.toFixed(2) + '\n' + evaluacion 
 
     console.log(mensaje)
 
