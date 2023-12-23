@@ -1,0 +1,28 @@
+while ( ciclo ){
+    /* datos */
+    estudiante = prompt ('Ingrese Nombre y Apellido');
+    nota1 = parseFloat ( prompt ( 'Ingrese la nota del parcial 1'));
+    nota2 = parseFloat ( prompt ( 'Ingrese la nota del parcial 2'));
+    nota3 = parseFloat ( prompt ( 'Ingrese la nota del parcial 3'));
+    promedio = ( nota1 + nota2 + nota3) /3
+
+
+    if (( promedio >= 7 ) && ( promedio <= 10 )) {  
+    alert ( 'El estudiante ' + estudiante + ' promociona')
+    }
+    else if ( promedio >= 4 && ( promedio < 7 )){   
+    alert ( 'El estudiante ' + estudiante + ' aprobó')
+    } 
+    else if ( promedio < 4){    
+    alert ( 'El estudiante ' + estudiante + ' desaprobó' )
+    }
+    else if (promedio < 0 || (promedio > 10)){
+        alert ( 'Ingrese una nota entre 0 y 10')
+    }
+
+    alert ( 'El estudiante '+ estudiante + '\n' + 'obtuvo un ' + promedio.toFixed(2) )
+
+    if (prompt("Escriba \"SI\" si desea ingresar otro estudiante").toLowerCase() != "si"){
+    ciclo = 0;
+    }
+}
