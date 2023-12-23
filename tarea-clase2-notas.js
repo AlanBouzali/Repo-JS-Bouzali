@@ -27,7 +27,7 @@ const calularPromedio = (nota1, nota2, nota3) =>{
 }
 
 const validarNota = (nota) =>{
-    if( (nota >= 1) && (nota <= 10) && isNaN (nota) ){
+    if( (nota >= 1) && (nota <= 10) && !isNaN (nota) ){
         return true;
     }
     else{
