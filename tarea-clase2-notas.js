@@ -27,7 +27,7 @@ const calularPromedio = (nota1, nota2, nota3) =>{
 }
 
 const validarNota = (nota) =>{
-    if( (nota >= 1) && (nota <= 10) ){
+    if( (nota >= 1) && (nota <= 10) && !isNaN(nota)){
         return true;
     }
     else{
@@ -44,16 +44,23 @@ const validarNombre = (nombre) =>{
     }
 }
 
-//seguir el lunes \/
-
-/* const validarTotalAlumnos = (listaEstudiantes) =>{
-    if( (listaEstudiantes ))
-} */
-
+const validarTotalAlumnos = (listaEstudiantes) => {
+    if (listaEstudiantes >= 1 && !isNaN(listaEstudiantes)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 /* inicio de programa */
 
-listaEstudiantes = parseInt ( prompt('Ingrese el número de estudiantes del curso'))
+do {
+    listaEstudiantes = parseInt(prompt('Ingrese el número de estudiantes del curso'));
+    if (!validarTotalAlumnos(listaEstudiantes)) {
+        alert('Error! Ingrese un número válido de estudiantes del curso.');
+    }
+} while (!validarTotalAlumnos(listaEstudiantes));
+
 
 for ( let i=1; i<= listaEstudiantes; i++){
 
@@ -97,31 +104,10 @@ for ( let i=1; i<= listaEstudiantes; i++){
     let mensaje = estudiante + ' obtuvo las siguientes notas: ' + '\n' + '- ' + nota1 + ' - ' + nota2 + ' - ' + nota3 + ' - ' + '\n Logrando un promedio de: ' + promedio.toFixed(2) + '\n' + evaluacion 
 
     console.log(mensaje)
+}
+
 
 /*     if (prompt("Escriba \"SI\" si desea ingresar otro estudiante").toLowerCase() != "si"){
         ciclo = 0;
     } */
-
-}
-
-/* 
-    nota2 = parseFloat ( prompt ( 'Ingrese la nota del parcial 2'));
-    nota3 = parseFloat ( prompt ( 'Ingrese la nota del parcial 3'));
-    promedio = ( nota1 + nota2 + nota3) /3
-
-
-     {  
-    alert ( 'El estudiante ' + estudiante + ' promociona')
-    }
-       
-    alert ( 'El estudiante ' + estudiante + ' aprobó')
-    } 
-    {    
-    alert ( 'El estudiante ' + estudiante + ' desaprobó' )
-    }
-    else if (promedio < 0 || (promedio > 10)){
-        alert ( 'Ingrese una nota entre 0 y 10')
-    } */
-
-//    alert ( 'El estudiante '+ estudiante + '\n' + 'obtuvo un ' + promedio.toFixed(2) )
 
