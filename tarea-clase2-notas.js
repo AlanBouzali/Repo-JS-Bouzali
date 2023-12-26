@@ -66,7 +66,6 @@ for ( let i=1; i<= listaEstudiantes; i++){
 
     do {
         estudiante = prompt ( i + ' - ' + 'Ingrese Nombre y Apellido');
-
         if( ! validarNombre( estudiante)){
             alert( 'El nombre ingresado no es valido')
         }
